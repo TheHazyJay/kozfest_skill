@@ -1,0 +1,196 @@
+//This is the JSON editor file from the BUILD tab. I use Amazon Hosted services for AWS
+
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "kozfest festival",
+            "intents": [
+                {
+                    "name": "LineupIntent",
+                    "slots": [
+                        {
+                            "name": "Item",
+                            "type": "List_of_Bands"
+                        }
+                    ],
+                    "samples": [
+                        "tell me the {Item}",
+                        "what's the  {Item}",
+                        "tell me who is {Item}",
+                        "tell me about {Item}",
+                        "who are {Item}",
+                        "who's {Item}",
+                        "who is {Item}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": [
+                        "Come again",
+                        "What was that",
+                        "Say Again",
+                        "Repeat",
+                        "Can you repeat that"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "Help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "end",
+                        "Alexa stop",
+                        "Stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "locationfinderIntent",
+                    "slots": [
+                        {
+                            "name": "location",
+                            "type": "location_finder"
+                        }
+                    ],
+                    "samples": [
+                        "What's the {location}",
+                        "Give me {location}",
+                        "What's the {location} for Kozfest",
+                        "What's the {location} of Kozfest",
+                        "Can I have {location} to Kozfest"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "List_of_Bands",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "line up"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "playing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "skeleton gong"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bonnacons of doom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "red sun"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "electric moon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the cult of dom keller"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "here and now"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "da captain trips"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "location_finder",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "directions"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "location"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "address"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "postcode"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "locationfinderIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "location",
+                            "type": "location_finder",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.629777687772.1388825137368"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "SKILL_RESPONSE"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.629777687772.1388825137368",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What's the postcode"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Where is Kozfest"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Give me directions"
+                    }
+                ]
+            }
+        ]
+    }
+}
